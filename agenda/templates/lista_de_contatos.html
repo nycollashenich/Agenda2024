@@ -8,5 +8,27 @@
 <body>
     <h1>Contatos</h1>
     <p>Aqui ficaram os contatos</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Criado em</th>
+            </tr>    
+        </thead>
+        <tbody>
+            {% for contato in contatos %}
+                <tr>  
+                    <td><a href="{% url 'index'%}">{{ contato.nome }}</a></td>
+                    <td>{{ contato.telefone }}</td>
+                    <td>{{ contato.email }}</td>
+                    <td>{{ contato.criado_em }}</td>
+                </th>
+            {% endfor %}
+        <tbody>
+    </table>
+
 </body>
 </html>
