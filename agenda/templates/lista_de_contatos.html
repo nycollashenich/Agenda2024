@@ -12,7 +12,8 @@
     <table>
         <thead>
             <tr>
-                <th>Nome</th>
+                <th>Primeiro nome</th>
+                <th>Segundo nome</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
                 <th>Criado em</th>
@@ -21,7 +22,8 @@
         <tbody>
             {% for contato in contatos %}
                 <tr>  
-                    <td><a href="{% url 'index'%}">{{ contato.nome }}</a></td>
+                    <td><a href="{% url 'index'%}">{{ contato.primeiro_nome }}</a></td>
+                    <td>{{ contato.segundo_nome }}</td>
                     <td>{{ contato.telefone }}</td>
                     <td>{{ contato.email }}</td>
                     <td>{{ contato.criado_em }}</td>
