@@ -22,7 +22,7 @@
         <tbody>
             {% for contato in contatos %}
                 <tr>  
-                    <td><a href="{% url 'index'%}">{{ contato.primeiro_nome }}</a></td>
+                    <td><a href="{% url 'editar_excluir'%}">{{ contato.primeiro_nome }}</a></td>
                     <td>{{ contato.segundo_nome }}</td>
                     <td>{{ contato.telefone }}</td>
                     <td>{{ contato.email }}</td>

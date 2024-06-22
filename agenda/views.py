@@ -11,3 +11,6 @@ def listadecontatos(request):
     }
 
     return render(request, 'lista_de_contatos.html', context)
+
+def editar_excluir(request):
+    return render(request, 'editar_excluir.html')
