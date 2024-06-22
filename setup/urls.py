@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from agenda import views
 from django.contrib import admin
 from django.urls import path, include
 
@@ -21,3 +22,10 @@ urlpatterns = [
     path('painel/', admin.site.urls),
     path('', include('agenda.urls')),
 ]
+
+
+
+# sessão dos error 404 e 500
+from django.conf.urls import handler404, handler500
+handler404 = views.error404
+handler500 = views.error500
