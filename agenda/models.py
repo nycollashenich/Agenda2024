@@ -11,6 +11,7 @@ class Contato(models.Model):
     email = models.EmailField(unique=True, blank=False)
     criado_em = models.DateTimeField(auto_now_add=True)
     imagem = StdImageField('Imagem', upload_to='rostos_contatos', variations={'thumb': (124, 124)}, blank=True)
+    descricao = models.CharField('Descrição', max_length=100, blank=True)
 
     def __str__(self) -> str:
         return self.primeiro_nome

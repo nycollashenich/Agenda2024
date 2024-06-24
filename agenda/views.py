@@ -7,6 +7,7 @@ from .models import Contato
 def index(request):
     return render(request, 'index.html')
 
+
 def listadecontatos(request):
     contatos = Contato.objects.all()
     context = {
@@ -15,12 +16,17 @@ def listadecontatos(request):
 
     return render(request, 'lista_de_contatos.html', context)
 
+
 def editar_excluir(request, pk):
     cont = get_object_or_404(Contato, id=pk)
     context= {
-        'contato': cont, # 'contato = for no template da lista'
+        'contato': cont, # 'contato' = for no template da lista
     }
     return render(request, 'editar_excluir.html', context)
+
+
+def addcontato(request):
+    return render(request, 'addcontato.html')
 
 
 
