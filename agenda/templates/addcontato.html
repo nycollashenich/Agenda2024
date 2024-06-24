@@ -6,6 +6,27 @@
     <title>Adiconar contato</title>
 </head>
 <body>
-    <h1>Add contato</h1>
+    <h1>Adicionar um novo contato</h1>
+    
+    {% block title %}Criar/Atualizar contato{% endblock %}
+    
+    {% block content %} 
+        <form method="post" 
+            action="{% if request.method == 'POST' %}{% url 'addcontato' %}{% endif %}" 
+            enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Criar contato</button> 
+        </form>
+    {% endblock content %}
+        
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div {% if message.tags %} class="alert {{ message.tags }}"{% endif %} role="alert">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
 </body>
 </html>
