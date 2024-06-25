@@ -17,6 +17,8 @@ Including another URLconf
 from agenda import views
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('painel/', admin.site.urls),
@@ -29,3 +31,6 @@ urlpatterns = [
 from django.conf.urls import handler404, handler500
 handler404 = views.error404
 handler500 = views.error500
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

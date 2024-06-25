@@ -6,30 +6,34 @@
     <title>Editar contato</title>
 </head>
 <body>
-    <p>Aqui será direcionado o contato, para edição!</p>
+
+    <a href="{% url 'editarcontato' contato.id %}">Editar</a>
+    <a href="{% url 'excluircontato' contato.id %}">Deletar</a>
 
     <table>
         <thead>
             <tr>
-                <th> </th>
                 <th>Primeiro nome</th>
                 <th>Segundo nome</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
+                <th>Descrição</th>
                 <th>Criado em</th>
             </tr>    
         </thead>
         <tbody>
             <tr>  
-                <td>{{ contato.imagem }}</td>
                 <td>{{ contato.primeiro_nome }}</td>
                 <td>{{ contato.segundo_nome }}</td>
                 <td>{{ contato.telefone }}</td>
                 <td>{{ contato.email }}</td>
+                <td>{{ contato.descricao }}</td>
                 <td>{{ contato.criado_em }}</td>
-             </th>
+            </tr>
         <tbody>
     </table>
     
+    
+
 </body>
 </html>
