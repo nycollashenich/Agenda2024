@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('painel/', admin.site.urls),
     path('', include('agenda.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
@@ -32,5 +32,5 @@ from django.conf.urls import handler404, handler500
 handler404 = views.error404
 handler500 = views.error500
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,14 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de contatos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
     
-    <h1>Lista de contatos</h1>
-    <h2><a href="{% url 'addcontato' %}">Botão adicionar contatos +</a></h2>
+    <h1>Sua lista de contatos</h1>
+    <h2><a href="{% url 'addcontato' %}" class="meu-botao">Adicionar + contatos</a></h2>
+
 
     <table>
         <thead>
